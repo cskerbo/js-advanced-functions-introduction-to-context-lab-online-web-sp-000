@@ -45,25 +45,9 @@ function createTimeOutEvent(employeeRecord, dateStamp) {
 }
 
 function hoursWorkedOnDate(employeeRecord, dateStamp) {
-  let timeInEvents = employeeRecord.timeInEvents
-  timeInEvents.forEach( (punch) => {
-    if (punch.date === dateStamp) {
-      let timeIn = punch.hour
-      return timeIn
-    }
-  })
-  console.log(timeIn)
-  let timeOutEvents = employeeRecord.timeOutEvents
-  timeOutEvents.forEach( (event) => {
-    if (event.date === dateStamp) {
-      let time = event.hour
-      return time
-    }
-  else {
-    return console.log('ERROR: Date not Found')
-  }
-  })
-
+  const eventOnDate = function(event) { return event.date === dateStamp }
+  const timeIn = employee.timeInEvents.find(eventOnDate).hour;
+  const timeOut = employee.timeOutEvents.find(eventOnDate).hour;
   let hoursWorked = (timeOut - timeIn) / 100
   return hoursWorked
 }
