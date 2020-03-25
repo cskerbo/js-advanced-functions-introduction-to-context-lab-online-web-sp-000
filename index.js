@@ -46,8 +46,8 @@ function createTimeOutEvent(employeeRecord, dateStamp) {
 
 function hoursWorkedOnDate(employeeRecord, dateStamp) {
   const eventOnDate = function(event) { return event.date === dateStamp }
-  const timeIn = employee.timeInEvents.find(eventOnDate).hour;
-  const timeOut = employee.timeOutEvents.find(eventOnDate).hour;
+  const timeIn = employeeRecord.timeInEvents.find(eventOnDate).hour;
+  const timeOut = employeeRecord.timeOutEvents.find(eventOnDate).hour;
   let hoursWorked = (timeOut - timeIn) / 100
   return hoursWorked
 }
