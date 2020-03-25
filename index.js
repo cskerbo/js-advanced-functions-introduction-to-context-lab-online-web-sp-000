@@ -63,6 +63,11 @@ function allWagesFor(employeeRecord) {
   const reducer = (totalWages, timeOutEvent) => {
        return totalWages + wagesEarnedOnDate(employeeRecord, timeOutEvent.date)
    }
-
    return employeeRecord.timeOutEvents.reduce(reducer, 0);
+}
+
+function findEmployeeByFirstName(employees, firstName){
+    return employees.find( (employee) => {
+        return employee.firstName === firstName
+    });
 }
