@@ -71,3 +71,12 @@ function findEmployeeByFirstName(employees, firstName){
         return employee.firstName === firstName
     });
 }
+
+function calculatePayroll(employeeRecords){
+
+    const reducer = (totalWages, employeeRecords) => {
+        return totalWages + allWagesFor(employeeRecords)
+    }
+
+    return employeeRecords.reduce(reducer, 0)
+}
