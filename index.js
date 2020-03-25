@@ -60,7 +60,9 @@ function wagesEarnedOnDate(employeeRecord, dateStamp) {
 }
 
 function allWagesFor(employeeRecord) {
-  let allWages = function() {
-    employeeRecord.time
-  }
+  const reducer = (totalWages, timeOutEvent) => {
+       return totalWages + wagesEarnedOnDate(employeeRecord, timeOutEvent.date)
+   }
+
+   return employeeRecord.timeOutEvents.reduce(reducer, 0);
 }
