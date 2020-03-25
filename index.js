@@ -46,15 +46,13 @@ function createTimeOutEvent(employeeRecord, dateStamp) {
 
 function hoursWorkedOnDate(employeeRecord, dateStamp) {
   let timeInEvents = employeeRecord.timeInEvents
-  function timeIn(timeInEvents){
-    timeInEvents.forEach( (punch) => {
+  timeInEvents.forEach( (punch) => {
     if (punch.date === dateStamp) {
       let timeIn = punch.hour
       console.log(timeIn)
     }
   })
   }
-  console.log(timeIn())
   let timeOutEvents = employeeRecord.timeOutEvents
   timeOutEvents.forEach( (event) => {
     if (event.date === dateStamp) {
