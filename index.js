@@ -49,10 +49,9 @@ function hoursWorkedOnDate(employeeRecord, dateStamp) {
   timeInEvents.forEach( (punch) => {
     if (punch.date === dateStamp) {
       let timeIn = punch.hour
-      console.log(timeIn)
+      return timeIn
     }
   })
-  console.log(timeIn)
   let timeOutEvents = employeeRecord.timeOutEvents
   timeOutEvents.forEach( (event) => {
     if (event.date === dateStamp) {
